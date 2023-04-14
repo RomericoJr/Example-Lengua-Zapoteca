@@ -1,0 +1,46 @@
+
+<h1>{{titleText}}</h1>
+
+<form [formGroup]="formColeccion">
+
+  <div class="form mb-3">
+    <label for="tipoWord">Selección del tipo de palabra</label>
+    <select formControlName="tipoWord" class="form-select" aria-label="Default select example">
+      <option for="selectt" selected>Colores</option>
+      <option value="1">Partes de la casa</option>
+      <option value="2">Lenguaje diario</option>
+      <option value="3">Partes del cuerpo</option>
+    </select>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input formControlName="spanishWord" type="text" class="form-control" id="wordSpanish" placeholder="Hola">
+    <label for="wordSpanish">Palabra en español</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input formControlName="zapotecoWord" type="text" class="form-control" id="wordZapoteco" placeholder="houl">
+    <label for="wordZapoteco">Palabra en zapoteco</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input formControlName="content" type="text" class="form-control" id="contenido" placeholder="Descripción pequeña de la palabra">
+    <label for="contenido">Contenido</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input formControlName="imagen" type="text" class="form-control" id="floatingInput" placeholder="imagen@example.com">
+    <label for="floatingInput">Imagen</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input formControlName="audio" type="text" class="form-control" id="sonido" placeholder="----">
+    <label for="sonido">sonido</label>
+  </div>
+
+  <div align="center">
+
+    <button [disabled]="formColeccion.invalid" (click)="option()"  type="button" class="btn btn-outline-success">{{titleBtn}}</button>
+  </div>
+
+</form>

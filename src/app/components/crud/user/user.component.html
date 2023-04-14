@@ -1,0 +1,57 @@
+
+<input
+  [formControl]="searcher"
+  type="text"
+  placeholder="Buscar palabra en español"
+  class="form-control mt-2"
+/>
+<div class="players" *ngIf=" word$ | async as words">
+<div class="row p-4">
+  <div align="center" *ngFor="let word of words" class="col" size="12" sizeLg="3" sizeMd="4" sizeXs="12" >
+    <div class="card" style="width: 18rem;">
+      <img [src]=word.imagen class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">palabra Zapoteco:
+          <span >
+            {{word.zapotecoWord}}
+          </span>
+        </h5>
+        <h5 class="card-title"> palabra Español:
+          <span>
+            {{word.spanishWord}}
+          </span></h5>
+        <p class="card-text">{{word.content}}</p>
+        <p class="card-text"> audio </p>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+  <!-- <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Decks</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players; let i = index">
+        <th scope="row">{{ i }}</th>
+        <td>{{ player.name }}</td>
+        <td>
+          <li *ngFor="let deck of player.decks">
+            {{ deck.name }} - {{ deck.cards }} cartas
+          </li>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="editPlayer(player)">Editar</button>
+          <button class="btn btn-danger ms-2" (click)="deletePlayer(player)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+</div>
+

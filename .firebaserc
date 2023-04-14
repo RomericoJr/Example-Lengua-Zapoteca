@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lenguaz": {
+      "hosting": {
+        "lenguaZ": [
+          "lenguaz"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lenguaz"
+  }
+}

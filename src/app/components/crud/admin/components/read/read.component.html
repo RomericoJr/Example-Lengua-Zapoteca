@@ -1,0 +1,36 @@
+
+<input
+  [formControl]="searcher"
+  type="text"
+  placeholder="Buscar palabra en español"
+  class="form-control mt-2"
+/>
+<div class="players" *ngIf=" word$ | async as words">
+<div class="row p-4">
+  <div align="center" *ngFor="let word of words" class="col" size="12" sizeLg="3" sizeMd="4" sizeXs="12" >
+
+    <div class="card" style="width: 18rem;">
+      <img [src]=word.imagen class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Palabra Zapoteco:
+          <span >
+            {{word.zapotecoWord}}
+          </span>
+        </h5>
+        <h5 class="card-title"> Palabra Español:
+          <span>
+            {{word.spanishWord}}
+          </span></h5>
+        <p class="card-text">{{word.content}}</p>
+        <p class="card-text"> audio </p>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button (click)="editar(word)" type="button" class="btn btn-success">Editar</button>
+        <button (click)="eliminar(word)" type="button" class="btn btn-danger">Eliminar</button>
+      </div>
+<br>
+    </div>
+
+    <br>
+  </div>
+</div>
